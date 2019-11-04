@@ -1,0 +1,490 @@
+body {
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Pen-specific styles */
+html,
+body,
+section {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  /*line-height: 150%;*/
+}
+.title {
+  position: absolute;
+  top: 5%;
+  left: 57%;
+  color: white;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2.75rem;
+  margin: 0;
+  margin-left: inherit;
+  z-index: 2;
+}
+
+/* Pattern styles */
+.container {
+  display: flex;
+}
+
+.booklet {
+  position: absolute;
+  top: -10%;
+  left: 9.65%;
+  z-index: 2;
+}
+
+.left-half {
+  background-color: #000;
+  flex: 0.5;
+  padding: 1rem;
+}
+
+.right-half {
+  font-family: Arial;
+  font-size: 30;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.2;
+  background-image: url("../Pictures/bgf.jpg");
+  flex: 2.5;
+  padding: 1rem;
+  background-size: cover;
+  z-index: 0;
+}
+
+.right-half-no-opc {
+  font-family: Arial;
+  font-size: 30;
+  background-color: rgb(255, 255, 255);
+
+  background-image: url("../Pictures/me2.jpg");
+  flex: 2;
+  padding: 1rem;
+  background-size: cover;
+  z-index: 0;
+}
+
+.right-half-bw-bc5 {
+  font-family: Arial;
+  font-size: 30;
+  background-color: rgb(255, 255, 255);
+
+  background-image: url("../Pictures/bc5.png");
+  flex: 2;
+  padding: 1rem;
+  background-size: cover;
+  z-index: 0;
+}
+
+.right-half-white {
+  font-family: Arial;
+  font-size: 30;
+  background-color: rgb(255, 255, 255);
+
+  flex: 2;
+  padding: 1rem;
+  background-size: cover;
+  z-index: 0;
+}
+
+/*Buttons*/
+.button_about_me {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border: 4px solid #000 !important;
+  border-radius: 50px;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  width: 170px;
+  height: 70px;
+  position: absolute;
+  transition: 0.5s ease;
+  top: 65%;
+  left: 60%;
+}
+
+.button_courses {
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border: 4px solid #000;
+  border-radius: 50px;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  width: 170px;
+  height: 70px;
+  position: absolute;
+  transition: 0.5s ease;
+  top: 65%;
+  left: 78%;
+}
+
+.button_about_me:hover {
+  color: #000 !important;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #000 !important;
+  border-radius: 50px;
+  transition: all 0.4s ease 0s;
+}
+
+.button_courses:hover {
+  color: #fff !important;
+  background: #000;
+  border-color: #000 !important;
+  border-radius: 50px;
+  transition: all 0.4s ease 0s;
+  cursor: pointer;
+}
+/*-sprint buttons-*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.suit_and_tie {
+  /* font */
+  color: black;
+  font-size: 20px;
+  font-family: helvetica;
+
+  /* remove blue underline */
+  text-decoration: none;
+
+  /* border */
+  border: 2px solid black;
+  border-radius: 5px;
+
+  /* transitions */
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+
+  /* other */
+  background-color: white;
+  padding: 4px 30px;
+}
+
+.suit_and_tie:hover {
+  /* update text color and background color */
+  color: white;
+  background-color: black;
+
+  /* transitions */
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.11s;
+  -moz-transition-duration: 0.2s;
+}
+
+.variation-a,
+.variation-b {
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.variation-b {
+  background-color: black;
+}
+
+.variation-b .suit_and_tie {
+  /* font */
+  color: white;
+
+  /* border */
+  border: 2px solid white;
+
+  /* other */
+  background-color: black;
+}
+
+.variation-b .suit_and_tie:hover {
+  /* font */
+  color: black;
+
+  /* border */
+  border: 2px solid black;
+
+  /* other */
+  background-color: white;
+}
+
+button.suit_and_tie {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.button_grid {
+  position: absolute;
+  left: 2.5%;
+  top: 20%;
+}
+/*--*/
+.contact {
+  position: absolute;
+  left: 4%;
+  top: 80%;
+  color: #fff;
+  font-family: Arial;
+  text-align: left;
+}
+.banner {
+  position: relative;
+  top: 4%;
+  left: 90%;
+  z-index: 1;
+  border: 2px solid black;
+  width: 330px;
+}
+
+.banner2 {
+  position: relative;
+  opacity: 0.9;
+  left: 40%;
+  top: 4 %;
+}
+
+.logo {
+  position: absolute;
+  top: 6%;
+  left: 2%;
+  z-index: 3;
+}
+
+.gitico {
+  width: 80px;
+  height: 90px;
+  position: absolute;
+  transition: 0.5s ease;
+  top: 3%;
+  left: 35%;
+  text-align: center;
+}
+
+.devico {
+  position: absolute;
+  width: 160px;
+  height: 180px;
+  transition: 0.5s ease;
+  top: 40%;
+  left: 71%;
+}
+/*
+hr {
+  position: relative;
+  top: 19%;
+  left: 20%;
+  display: block;
+  height: 400px;
+  width: 90px;
+  border: 0;
+  border-top: 5px solid #000;
+  margin: 1em 0;
+  padding: 0;
+  z-index: 0;
+}
+*/
+.about-me-text {
+  position: absolute;
+  top: 40%;
+  width: 500px;
+  left: 61%;
+  text-align: left;
+  color: #000;
+  z-index: 2;
+}
+
+.about_me_text {
+  position: fixed;
+  left: 3%;
+  top: 20%;
+  width: 400px;
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 19px;
+  text-align: left;
+}
+
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.7s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 2%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 18px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #fff;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+.openbtn {
+  position: fixed;
+  font-size: 30px;
+  top: 1%;
+  left: 1%;
+  color: #fff;
+  z-index: 3;
+  cursor: pointer;
+}
+
+/*-------------------------------------preloader--------------------------------------------*/
+.wrapper {
+  position: fixed;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
+.logo-svg {
+  position: relative;
+  left: 50%;
+  top: 5%;
+  margin: -75px 0px 0px -75px;
+  width: 150px;
+  z-index: 1001;
+}
+
+/*---------------------card grid-------------------*/
+.card-container {
+  display: grid;
+  padding: 1rem;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+.card {
+  display: grid;
+}
+.card .button {
+  align-self: end;
+}
+
+/* Simple Card styles for prettying */
+
+html {
+  font-size: 16px;
+  font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+.card {
+  box-shadow: 0px 1px 5px #555;
+  background-color: black;
+}
+.card__title {
+  font-size: 2rem;
+  padding: 0.5rem;
+  color: white;
+}
+.card__description {
+  padding: 0.5rem;
+  line-height: 1.6em;
+  color: white;
+}
+.button {
+  display: block;
+  background-color: black;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s ease-out;
+  &:hover {
+    background-color: darken(tomato, 10%);
+  }
+}
+img {
+  max-width: 100%;
+}
+
+/*---*/
+
+/*-----------------------------------------Q learning AI-------------------*/
+#canvas {
+  border: 2px solid #333;
+}
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
