@@ -27,21 +27,15 @@ body {
 }
 .title-sco {
   position: relative;
-  font-size: 500px;
-  top: 20%;
-  margin-left: 25%;
-
+  font-size: 30vw;
+  text-align: center;
   color: white;
-  width: 100px;
 }
 .title-uex {
-  position: fixed;
-  font-size: 500px;
-  top: -30%;
-
+  position: relative;
+  font-size: 30vw;
+  text-align: center;
   color: white;
-  margin-left: 25%;
-  margin-right: 25%;
 }
 div {
   display: flex;
