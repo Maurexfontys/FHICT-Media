@@ -296,16 +296,6 @@ button.suit_and_tie {
   z-index: 3;
 }
 
-.gitico {
-  width: 80px;
-  height: 90px;
-  position: absolute;
-  transition: 0.5s ease;
-  top: 3%;
-  left: 35%;
-  text-align: center;
-}
-
 .devico {
   position: absolute;
   width: 160px;
@@ -569,5 +559,5 @@ body {
   width: 200px;
   background-color: blue;
   top: 70%;
-  left: 20%;
+  left: 30%;
 }
