@@ -10,13 +10,16 @@ function jump(event) {
         let timePassed = Date.now() - start;
 
         if (timePassed >= 1700) {
-          clearInterval(timer); // finish the animation after 2 seconds
+          clearInterval(timer); // finish the animation after 1.7 seconds
         }
         // draw the animation at the moment timePassed
         draw(timePassed);
       }, 29);
+
       function draw(timePassed) {
-        mau.style.top = timePassed / 27 + "%";
+        if (timePassed >= 300) {
+          mau.style.top = timePassed / 27 + "%";
+        }
       }
   }
 }
