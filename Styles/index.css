@@ -25,17 +25,13 @@ body {
   font-size: 1.25rem;
   /*line-height: 150%;*/
 }
-.title-sco {
+
+.title-page {
   position: relative;
   font-size: 30vw;
   text-align: center;
   color: white;
-}
-.title-uex {
-  position: relative;
-  font-size: 30vw;
-  text-align: center;
-  color: white;
+  text-shadow: 2px 2px 16px #000000;
 }
 div {
   display: flex;
@@ -102,6 +98,18 @@ h1 {
   background-color: rgb(255, 255, 255);
 
   background-image: url("../Pictures/bc5.png");
+  flex: 2;
+  padding: 1rem;
+  background-size: cover;
+  z-index: 0;
+}
+
+.right-half-bw-pro {
+  font-family: Arial;
+  font-size: 30;
+  background-color: rgb(255, 255, 255);
+
+  background-image: url("../Pictures/pro_bg.png");
   flex: 2;
   padding: 1rem;
   background-size: cover;

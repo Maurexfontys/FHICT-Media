@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="./Styles/index.css" type="text/css" rel="stylesheet" />
+    <link href="./Styles/index.css" type="text/css" rel="stylesheet">
     <title>Maurice Waelen</title>
   </head>
   <body>
     <section class="container">
-      <div class="left-half">
+      <div class="left-half-no-flex">
         <article>
           <!-- The overlay -->
-          <div id="myNav" class="overlay">
-            <!-- Button to close the overlay navigation -->
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-              >&times;</a
-            >
+      <div id="myNav" class="overlay">
 
-            <!-- Overlay content -->
-            <div class="overlay-content">
-              <a href="index.html">HOME</a>
-              <a href="about_me.html">ABOUT ME</a>
-              <a href="pro.html">PRO</a>
-              <a href="dev.html">DEV</a>
-              <a href="sco.html">SCO</a>
-              <a href="uex.html">UEX</a>
-              <a href="project.html">PTM</a>
-            </div>
-          </div>
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-          <!-- Use any element to open/show the overlay navigation menu -->
-          <span class="openbtn" onclick="openNav()">&#9776;</span>
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <a href="index.html">HOME</a>
+          <a href="about_me.html">ABOUT ME</a>
+          <a href="dev.html">DEV</a>
+            <a href="uex.html">UEX</a>
+          <a href="sco.html">SCO</a>
+          <a href="project.html">PTM</a>
+        </div>
+
+      </div>
+
+      <!-- Use any element to open/show the overlay navigation menu -->
+      <span class="openbtn" onclick="openNav()">&#9776;</span>
           <div class="logo">
-            <img
-              src="./Pictures/logo1.png"
-              height="100"
-              width="200"
-              alt="Logo"
-            />
+            <img src="./Pictures/logo1.png" height=100 width=200 alt="Logo" />
           </div>
         </article>
       </div>
-      <div class="right-half-white"></div>
-    </section>
+      <div class="right-half-bw-pro">
+        <article>
+          <div class="title-page">
+          <p>PRO</p>
+          </div>
+          <div class="scroll-down"></div>
 
-    <script src="./Scripts/index.js"></script>
+          <p>timeline</p>
+
+          </section>
+        </article>
+
+    </section>
+    </div>
+
+
+<script src="./Scripts/index.js"></script>
   </body>
 </html>
