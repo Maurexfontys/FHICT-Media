@@ -1,9 +1,8 @@
 body {
   margin: 0;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -187,86 +186,6 @@ body {
   padding: 0;
 }
 
-.suit_and_tie {
-  /* font */
-  color: black;
-  font-size: 20px;
-  font-family: helvetica;
-
-  /* remove blue underline */
-  text-decoration: none;
-
-  /* border */
-  border: 2px solid black;
-  border-radius: 5px;
-
-  /* transitions */
-  transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-
-  /* other */
-  background-color: white;
-  padding: 4px 30px;
-}
-
-.suit_and_tie:hover {
-  /* update text color and background color */
-  color: white;
-  background-color: black;
-
-  /* transitions */
-  transition-duration: 0.2s;
-  -webkit-transition-duration: 0.11s;
-  -moz-transition-duration: 0.2s;
-}
-
-.variation-a,
-.variation-b {
-  display: inline-block;
-  height: 100px;
-  width: 100%;
-  text-align: center;
-  padding-top: 50px;
-}
-
-.variation-b {
-  background-color: black;
-}
-
-.variation-b .suit_and_tie {
-  /* font */
-  color: white;
-
-  /* border */
-  border: 2px solid white;
-
-  /* other */
-  background-color: black;
-}
-
-.variation-b .suit_and_tie:hover {
-  /* font */
-  color: black;
-
-  /* border */
-  border: 2px solid black;
-
-  /* other */
-  background-color: white;
-}
-
-button.suit_and_tie {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-.button_grid {
-  position: absolute;
-  left: 2.5%;
-  top: 20%;
-}
-/*--*/
 .contact {
   position: absolute;
   left: 4%;
@@ -393,9 +312,9 @@ hr {
 
 .openbtn {
   position: fixed;
-  font-size: 30px;
+  font-size: 50px;
   top: 1%;
-  left: 1%;
+  right: 3%;
   color: #fff;
   z-index: 3;
   cursor: pointer;
