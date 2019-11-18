@@ -472,20 +472,45 @@ body {
     opacity: 0;
   }
 }
+<<<<<<< HEAD
 /*-----------------------------------------jsgame-------------------*/
+=======
+/*-------------------------------------js_game-------------------*/
+>>>>>>> Javascript-game
 
-#canvas {
-  border: 2px solid #333;
+#mau {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  top: 80%;
+  left: 25%;
 }
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px;
+
+.bg {
+  background-image: url("../Pictures/flappy_bird.png");
+  background-position-x: 90%;
+  animation-delay: 0s;
+  animation-duration: 20s;
+  animation-name: panoramic;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  width: 850px;
+  height: 760px;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 1px solid gold;
+  will-change: background-position-x;
+}
+
+@keyframes panoramic {
+  0% {
+    background-position-x: 0%;
   }
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
+
+  100% {
+    background-position-x: 100%;
   }
 }
 /*--------------------------------------timeline-------------------*/
