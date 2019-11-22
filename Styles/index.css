@@ -164,7 +164,7 @@ h1 {
 }
 
 .button_about_me:hover {
-  color: #000;
+  color: #000 !important;
   background: rgba(255, 255, 255, 0.2);
   border-color: #000;
   border-radius: 50px;
@@ -674,41 +674,5 @@ time {
     left: -15px;
     border-width: 8px 16px 8px 0;
     border-color: transparent #f45b69 transparent transparent;
-  }
-}
-
-#mau {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  background-color: blue;
-  top: 80%;
-  left: 25%;
-}
-
-.bg {
-  background-image: url("../Pictures/flappy_bird.png");
-  background-position-x: 90%;
-  animation-delay: 0s;
-  animation-duration: 20s;
-  animation-name: panoramic;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-fill-mode: both;
-  width: 850px;
-  height: 760px;
-  overflow: hidden;
-  margin: 0 auto;
-  border: 1px solid gold;
-  will-change: background-position-x;
-}
-
-@keyframes panoramic {
-  0% {
-    background-position-x: 0%;
-  }
-
-  100% {
-    background-position-x: 100%;
   }
 }
