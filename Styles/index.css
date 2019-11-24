@@ -52,9 +52,9 @@ h1 {
 
 .booklet {
   position: absolute;
-  top: -10%;
+  top: 80%;
   left: 9.65%;
-  z-index: 2;
+  z-index: -1;
 }
 
 .left-half {
@@ -101,6 +101,18 @@ h1 {
   padding: 1rem;
   background-size: cover;
   z-index: 0;
+}
+
+.right-half-bw-strijp {
+  font-family: Arial;
+  font-size: 30;
+  background-color: rgb(255, 255, 255);
+
+  background-image: url("../Pictures/me-strijp.jpg");
+  flex: 2;
+  padding: 1rem;
+  background-size: cover;
+  z-index: 1;
 }
 
 .right-half-bw-pro {
@@ -214,7 +226,7 @@ body {
   position: absolute;
   top: 6%;
   left: 2%;
-  z-index: 3;
+  z-index: 35;
 }
 
 .devico {
@@ -267,7 +279,7 @@ hr {
   height: 100%;
   width: 0;
   position: fixed; /* Stay in place */
-  z-index: 3; /* Sit on top */
+  z-index: 30; /* Sit on top */
   left: 0;
   top: 0;
   background-color: rgb(0, 0, 0); /* Black fallback color */
@@ -293,6 +305,8 @@ hr {
   color: #fff;
   display: block; /* Display block instead of inline */
   transition: 0.3s; /* Transition effects on hover (color) */
+  white-space: nowrap;
+  min-width: 280px;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -305,8 +319,8 @@ hr {
 /* Position the close button (top right corner) */
 .overlay .closebtn {
   position: absolute;
-  top: 20px;
-  right: 45px;
+  top: -23px;
+  right: -77px;
   font-size: 60px;
 }
 
@@ -472,11 +486,10 @@ body {
     opacity: 0;
   }
 }
-<<<<<<< HEAD
+
 /*-----------------------------------------jsgame-------------------*/
-=======
+
 /*-------------------------------------js_game-------------------*/
->>>>>>> Javascript-game
 
 #mau {
   position: absolute;
