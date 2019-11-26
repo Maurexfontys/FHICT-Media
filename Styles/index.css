@@ -264,7 +264,7 @@ hr {
 
 .about_me_text {
   position: absolute;
-  left: 3%;
+  left: 19%;
   top: 110%;
   width: 400px;
   color: #000;
@@ -276,9 +276,9 @@ hr {
 
 #abm1 {
   position: absolute;
-  left: 40%;
+  left: 55%;
   top: 110%;
-  width: 500px;
+  width: 400px;
   height: 550px;
 }
 
