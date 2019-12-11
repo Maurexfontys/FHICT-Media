@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="./js_game/movingObject.js"></script>
+    <script src="./js_game/jump.js"></script>
+    <script src="./js_game/collisionDetection.js"></script>
+      <script src="./Scripts/index.js"></script>
     <link rel='icon' href='./Pictures/logo1.ico' type='image/x-icon'/ >
     <link href="./Styles/index.css" type="text/css" rel="stylesheet">
     <title>Maurice Waelen</title>
-    <script src="./js_game/script.js"></script>
+
   </head>
   <body>
 
@@ -43,13 +47,13 @@
 
       <div class="right-half-no-opc">
         <article>
-          <div class="bg"></div>
-  <div id="mau"></div>
+
+<canvas id="gameCanvas" width="1000" height="600" style="z-index:1"> </canvas>
         </article>
     </section>
     </div>
 
-<script src="./Scripts/index.js"></script>
-<script src="./Scripts/QLearningAI.js"></script>
+
+
   </body>
 </html>

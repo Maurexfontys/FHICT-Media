@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <link href="./Styles/index.css" type="text/css" rel="stylesheet" />
+    <script src="./Scripts/index.js"></script>
+  </head>
+
+  <body>
+    <div id="myNav" class="overlay">
+      <!-- Button to close the overlay navigation -->
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+
+      <!-- Overlay content -->
+      <div class="overlay-content">
+        <a href="index.html">HOME</a>
+        <a href="about_me.html">ABOUT ME</a>
+        <a href="pro.html" style="text-decoration:underline">PRO</a>
+        <a href="sco.html">SCO</a>
+        <a href="dev.html">DEV</a>
+        <a href="uex.html">UEX</a>
+      </div>
+    </div>
+
+    <!-- Use any element to open/show the overlay navigation menu -->
+
+    <a href="index.html">
+      <div class="logo">
+        <img src="./Pictures/logo1.png" height="100" width="200" alt="Logo" />
+      </div>
+    </a>
+    <div class="bgArduino">
+      <div class="master_code">
+        <pre>
+    <code>
+      /*----------------------------------------------------------------*/
+      /*     Master                                                     */
+      /*----------------------------------------------------------------*/
+#include Arduino.h>
+#include SoftwareSerial.h>
+#define BUFLEN 20
+
+const long interval = 5000;
+long oldMillis;
+long verskill;
+
+typedef enum {
+  RED,
+  GREEN
+} color;
+
+typedef enum {
+  STATE_MASTER_GREEN,
+  STATE_SLAVE_GREEN,
+  STATE_CONNECTING
+} stat;
+
+int greenLightPin = 8;
+int redLightPin = 9;
+
+SoftwareSerial mySerial();
+#define mySerial Serial
+
+#define MESSAGE_START ('#')
+#define MESSAGE_STOP (';')
+#define MAX_TIME_SINCE_LAST_MESSAGE (2500)
+
+typedef enum {
+  WAITING_FOR_MESSAGE,
+  READING_MESSAGE
+} communicationState;
+
+String incomingMessage = "";
+communicationState comState = WAITING_FOR_MESSAGE;
+
+int  readIncomingMessage(char *buf)
+{
+  buf[0] = '\0';
+  int retval = 0;
+
+  while (mySerial.available() > 0)
+  {
+
+    int incomingByte = mySerial.read();
+
+    Serial.print((char)incomingByte);
+
+    if (comState == WAITING_FOR_MESSAGE)
+    {
+      if (incomingByte == MESSAGE_START)
+      {
+        comState = READING_MESSAGE;
+      }
+    }
+    else if (comState == READING_MESSAGE)
+    {
+      if (incomingByte == MESSAGE_STOP)
+      {
+        strcpy(buf, incomingMessage.c_str());
+        incomingMessage = "";
+        comState = WAITING_FOR_MESSAGE;
+        retval = 1;
+      }
+      else
+      {
+        incomingMessage += (char)incomingByte;
+      }
+    }
+  }
+
+  return retval;
+}
+
+/*----------------------------------------------------------------*/
+/*     SETUP                                                      */
+/*----------------------------------------------------------------*/
+stat state = STATE_CONNECTING;
+
+
+
+void setColor(color color) {
+  if (color == RED) {
+    digitalWrite(redLightPin, HIGH);
+    digitalWrite(greenLightPin, LOW);
+  }
+  else {
+    digitalWrite(greenLightPin, HIGH);
+    digitalWrite(redLightPin, LOW);
+  }
+}
+
+void sendReply(String mes) {
+  mySerial.print(MESSAGE_START);
+  mySerial.print(mes);
+  mySerial.print(MESSAGE_STOP);
+}
+
+void setup() {
+  Serial.begin(9600);
+  mySerial.begin(9600);
+  Serial.println("Slave started");
+
+  int pins[2] = {redLightPin, greenLightPin};
+  for (int i = 0; i < 2; i++) {
+    pinMode(pins[i], OUTPUT);
+    digitalWrite(pins[i], LOW);
+  }
+  setColor(RED);
+}
+
+/*----------------------------------------------------------------*/
+/*     LOOP                                                       */
+/*----------------------------------------------------------------*/
+void loop()
+{
+
+
+  switch(state)
+  {
+    case STATE_SLAVE_GREEN:
+    oldMillis = millis();
+    sendReply("GREEN");
+    setColor(GREEN);
+    verskill = millis() - oldMillis;
+    if(verskill > interval)
+    {
+      stat = STATE_MASTER_GREEN;
+    }
+    break;
+
+    case STATE_MASTER_GREEN:
+    oldMillis = millis();
+    sendReply("RED");
+    setcolor(RED);
+    verskill = millis() - oldMillis;
+    if(verskill > interval)
+    {
+      stat = STATE_CONNECTING;
+    }
+    break;
+
+    case STATE_CONNECTING:
+    stat = STATE_MASTER_GREEN;
+    break;
+  }
+
+
+}
+ </code>
+ </pre>
+      </div>
+      <div class="slave_code">
+        <pre>
+    <code>
+      /*----------------------------------------------------------------*/
+      /*     SLAVE                                                      */
+      /*----------------------------------------------------------------*/
+#include Arduino.h>
+#include SoftwareSerial.h>
+#define BUFLEN 20
+typedef enum{
+  RED,
+  GREEN
+} color;
+
+int greenLightPin = 8;
+int redLightPin = 9;
+
+
+SoftwareSerial mySerial(0,1);
+#define mySerial Serial
+
+#define MESSAGE_START ('#')
+#define MESSAGE_STOP (';')
+#define MAX_TIME_SINCE_LAST_MESSAGE (2500)
+
+typedef enum {
+  WAITING_FOR_MESSAGE,
+  READING_MESSAGE
+} communicationState;
+
+String incomingMessage = "";
+communicationState comState = WAITING_FOR_MESSAGE;
+
+
+int  readIncomingMessage(char *buf)
+{
+  buf[0]='\0'; // lets clear the return c-string
+  int retval = 0; // we start with no errors and nothing to return
+
+  // read the serial port buffer as long there are characters
+
+  while(mySerial.available() >0)
+  {
+
+    int incomingByte = mySerial.read();
+
+    Serial.print((char)incomingByte); // lets debug a bit
+
+    if(comState == WAITING_FOR_MESSAGE)
+    {
+      if(incomingByte == MESSAGE_START)
+      {
+        comState = READING_MESSAGE;
+      }
+    }
+    else if(comState == READING_MESSAGE)
+    {
+      if(incomingByte == MESSAGE_STOP)
+      {
+        strcpy(buf,incomingMessage.c_str());
+        incomingMessage = "";
+        comState = WAITING_FOR_MESSAGE;
+        retval = 1;
+      }
+      else
+      {
+        incomingMessage += (char)incomingByte;
+      }
+    }
+  } //while-loop
+
+  return retval;
+}
+
+/*----------------------------------------------------------------*/
+/*     SETUP                                                      */
+/*----------------------------------------------------------------*/
+void setColor(color color) {
+  if(color == RED) {
+    digitalWrite(redLightPin, HIGH);
+    digitalWrite(greenLightPin, LOW);
+  }
+  else {
+    digitalWrite(greenLightPin, HIGH);
+    digitalWrite(redLightPin, LOW);
+  }
+}
+
+void sendReply(String mes) {
+  mySerial.print(MESSAGE_START);
+  mySerial.print(mes);
+  Serial.println(mes);
+  mySerial.print(MESSAGE_STOP);
+}
+
+void setup() {
+  Serial.begin(9600);
+  mySerial.begin(9600);
+  Serial.println("Slave started");
+
+  int pins[2] = {redLightPin, greenLightPin};
+  for(int i = 0; i < 2; i++) {
+    pinMode(pins[i],OUTPUT);
+    digitalWrite(pins[i],LOW);
+  }
+  setColor(RED);
+}
+
+/*----------------------------------------------------------------*/
+/*     LOOP                                                       */
+/*----------------------------------------------------------------*/
+void loop()
+{
+  static unsigned long timeOfLastMessage = millis();
+  char buffer[BUFLEN];
+  int messageAvailable = readIncomingMessage(buffer);
+
+  if (messageAvailable==1)
+  {
+    timeOfLastMessage = millis();
+    Serial.print("Cmd: ");Serial.println(buffer);
+
+    if (strcmp("RED",buffer) == 0)
+    {
+       setColor(RED);
+       sendReply("ACK");
+    }
+    else if(strcmp("GREEN",buffer) == 0)
+    {
+      setColor(GREEN);
+      sendReply("ACK");
+    }
+    else if(strcmp("BEAT",buffer) == 0)
+    {
+
+      sendReply("ACK");
+    }
+    else
+    {
+      sendReply("NACK");
+    }
+
+  }
+
+  unsigned long timeSinceLastMessage = millis() - timeOfLastMessage;
+  if(timeSinceLastMessage > MAX_TIME_SINCE_LAST_MESSAGE) {
+    Serial.println("COMMUNICATION LOST!");
+    setColor(RED);
+    Serial.println("LIGHT SET TO RED");
+  }
+
+  delay(250);
+}
+ </code>
+</pre>
+      </div>
+    </div>
+  </body>
+</html>
