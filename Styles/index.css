@@ -533,7 +533,7 @@ body {
 .slideshow-container {
   max-width: 750px;
   position: absolute;
-
+  margin-bottom: 69px;
   left: 25%;
   top: 250%;
 }
