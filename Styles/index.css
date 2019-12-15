@@ -401,6 +401,9 @@ hr {
   padding: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
+  width: 100%;
+  margin: 0 -1rem;
+  padding-bottom: 10px;
 }
 .card {
   display: grid;
@@ -825,6 +828,7 @@ time {
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
+  height: 450px;
 
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
