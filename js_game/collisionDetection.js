@@ -1,6 +1,8 @@
 function collisionDetection(player, pipes) {
   for (var pipe of pipes) {
     if (intersects(player, pipe)) {
+      console.log("hit");
+      window.alert("GAME OVER  ");
       return pipe;
     }
   }
