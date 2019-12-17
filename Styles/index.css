@@ -304,6 +304,38 @@ hr {
   z-index: 25;
 }
 
+.dev-beschrijving {
+  position: absolute;
+  left: 19%;
+  top: 110%;
+  width: 800px;
+  color: #000;
+  font-family: Helvetica;
+  font-size: 19px;
+  text-align: left;
+  z-index: 25;
+}
+.javascript_collision {
+  position: absolute;
+  left: 60%;
+  top: 195%;
+  text-align: left;
+}
+
+.javascript_render {
+  position: absolute;
+  left: 60%;
+  top: 165%;
+  text-align: left;
+}
+
+.javascript_drawPipe {
+  position: absolute;
+  left: 60%;
+  top: 117%;
+  text-align: left;
+}
+
 #abm1 {
   position: absolute;
   left: 55%;

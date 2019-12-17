@@ -101,7 +101,7 @@ function drawLevel() {
 //moves character
 function move() {
   if (keys[32]) {
-    //if w or space is pressed
+    //if space is pressed
     player.velocity.y = -maxVelY; //sets the initial velocity when jumping
     jumping = true;
     onGround = false;
@@ -127,14 +127,6 @@ function move() {
 }
 
 function bigBlock(xIn, yIn, colorIn, sizeXin = 1, sizeYin = 1) {
-  //xin = x-axis
-  //yin = y-axis
-  //size = how many steps
-
-  //xin = x-axis
-  //yin = y-axis
-  //size = how many steps
-
   sizeX = xIn + sizeXin;
   sizeY = yIn + sizeYin;
   for (var i = xIn; i < sizeX; i++) {
@@ -146,14 +138,6 @@ function bigBlock(xIn, yIn, colorIn, sizeXin = 1, sizeYin = 1) {
 }
 
 function stackBlock(xin, yin, colorIn, hide = false) {
-  //xin = x axis location
-  //yin = y axis location
-  //colorIn = block color
-  //hide = show or hide, default is to show -- true = hide
-
-  // var img = document.getElementById(imgIn);
-  // console.log("Image in: " + imgIn);
-
   var sum = BLOCK_HEIGHT * yin; // + yin;
   var sum2 = BLOCK_WIDTH * xin; // + xin;
   var b_height = canvas.height - sum;

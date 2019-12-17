@@ -1,59 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="./js_game/movingObject.js"></script>
-    <script src="./js_game/jump.js"></script>
-    <script src="./js_game/collisionDetection.js"></script>
-      <script src="./Scripts/index.js"></script>
-    <link rel='icon' href='./Pictures/logo1.ico' type='image/x-icon'/ >
-    <link href="./Styles/index.css" type="text/css" rel="stylesheet">
-    <title>Maurice Waelen</title>
 
-  </head>
-  <body>
+<head>
+  <script src="./js_game/movingObject.js"></script>
+  <script src="./js_game/jump.js"></script>
+  <script src="./js_game/collisionDetection.js"></script>
+  <script src="./Scripts/index.js"></script>
+  <link rel='icon' href='./Pictures/logo1.ico' type='image/x-icon' />
+  <link href="./Styles/index.css" type="text/css" rel="stylesheet">
+  <title>Maurice Waelen</title>
 
-    <section class="container">
-      <div class="left-half-no-flex">
-        <article>
-          <!-- The overlay -->
-      <div id="myNav" class="overlay">
+</head>
 
-        <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<body>
 
-        <!-- Overlay content -->
-        <div class="overlay-content">
-          <a href="index.html">HOME</a>
-          <a href="about_me.html">ABOUT ME</a>
-          <a href="pro.html">PRO</a>
-          <a href="sco.html">SCO</a>
-          <a href="dev.html" style="text-decoration:underline">DEV</a>
-          <a href="uex.html">UEX</a>
+  <section class="container">
+    <div class="left-half-no-flex">
+      <article>
+        <!-- The overlay -->
+        <div id="myNav" class="overlay">
+
+          <!-- Button to close the overlay navigation -->
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+          <!-- Overlay content -->
+          <div class="overlay-content">
+            <a href="index.html">HOME</a>
+            <a href="about_me.html">ABOUT ME</a>
+            <a href="pro.html">PRO</a>
+            <a href="sco.html">SCO</a>
+            <a href="dev.html" style="text-decoration:underline">DEV</a>
+            <a href="uex.html">UEX</a>
+
+          </div>
 
         </div>
 
-      </div>
-
-      <!-- Use any element to open/show the overlay navigation menu -->
-      <span class="openbtn" onclick="openNav()">&#9776;</span>
-      <a href="index.html">
+        <!-- Use any element to open/show the overlay navigation menu -->
+        <span class="openbtn" onclick="openNav()">&#9776;</span>
+        <a href="index.html">
           <div class="logo">
-            <img src="./Pictures/logo1.png" height=100 width=200 alt="Logo"/>
+            <img src="./Pictures/logo1.png" height=100 width=200 alt="Logo" />
           </div>
         </a>
 
-        </article>
-      </div>
-
-      <div class="right-half-no-opc">
-        <article>
-
-<canvas id="gameCanvas" width="1000" height="600" style="z-index:1"> </canvas>
-        </article>
-    </section>
+      </article>
     </div>
 
+    <div class="right-half-no-opc">
+      <article>
+
+        <canvas id="gameCanvas" width="1000" height="600" style="z-index:1"> </canvas>
+      </article>
+
+      <div class=dev-beschrijving>
+        <h1>DEVELOPMENT</h1>
+        <br>
+
+        <p>
+          Ik heb gekozen om voor development in dit semester een game te maken in Javascript.
+          <br>
+          <br>
+
+          Ik heb al enige ervaring in het programmeren in C, C# waardoor ik de basisprincipes van het programmeren an sich relatief goed begrijp.
+          <br>
+          <br>
+
+          Toch vond ik het lastig om iets te verzinnen dat ik wilde gaan maken dit semester, de standaard TicTacToe opdrachten etc. heb ik al vaker gemaakt en ik wilde dus iets nieuws uitproberen.
+          <br>
+          <br>
+          Toen kwam ik door advies van Erik uit op het maken van een iets grotere opdracht.<br>
+
+          Dit sprak mij wel aan en ben ik begonnen met de basis van mijn game op te zetten.
+          <br>
+          <br>
+          <br>
+          <h2>Requirements:</h2>
+          <br>
+
+          - De gebruiker moet “soepel” omhoog kunnen springen door de spatiebalk in te drukken.<br>
+          <br>
+          - Een “Obstakel” over het canvas laten bewegen.<br>
+          <br>
+          - Collision Detection. (Zodra de gebruiker een obstakel raakt is hij game-over).<br>
+          <br>
+          <br>
+          <br>
+          Dit zijn de basis requirements voor mijn game.<br><br>
+          Dmv. Github heb ik makkelijk mijn gemaakte features kunnen testen en deze vervolgens kunnen implementeren op mijn DEV Portfolio pagina.<br><br>
+
+          Door deze game op te delen in kleinere problemen en gebruik te maken van versiebeheer kon ik heel makkelijk overzicht houden in mijn code.<br><br>
+
+          Zoals het nu staat werken alle genoemde requirements in mijn game. <br> Nu lijkt het mij leuk om hier nog een heel level van te maken waardoor er meer objecten over het canvas bewegen en het ook echt een game is ipv. een POC waar ik mijn
+          leerdoelen mee wil aantonen.
+          <br> <br> <br>
+        </p>
+      </div>
+
+      <pre class="javascript_drawPipe" style="font-family:monospace;">document.<span style="color: #660066;">addEventListener</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;keydown&quot;</span><span style="color: #339933;">,</span> drawPipe<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000066; font-weight: bold;">function</span> drawPipes<span style="color: #009900;">&#40;</span>pipes<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">var</span> pipe of pipes<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    drawPipe<span style="color: #009900;">&#40;</span>pipe<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #000066; font-weight: bold;">function</span> drawPipe<span style="color: #009900;">&#40;</span>pipe<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  ctx.<span style="color: #660066;">beginPath</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  ctx.<span style="color: #660066;">fillStyle</span> <span style="color: #339933;">=</span> pipe.<span style="color: #660066;">color</span><span style="color: #339933;">;</span>
+  <span style="color: #000066; font-weight: bold;">var</span> rect <span style="color: #339933;">=</span> ctx.<span style="color: #660066;">fillRect</span><span style="color: #009900;">&#40;</span>
+    pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">x</span><span style="color: #339933;">,</span>
+    pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">y</span><span style="color: #339933;">,</span>
+    pipe.<span style="color: #660066;">dimensions</span>.<span style="color: #660066;">width</span><span style="color: #339933;">,</span>
+    pipe.<span style="color: #660066;">dimensions</span>.<span style="color: #660066;">height</span>
+  <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  ctx.<span style="color: #660066;">closePath</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+  pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">x</span> <span style="color: #339933;">=</span> pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">x</span> <span style="color: #339933;">-</span> <span style="color: #CC0000;">1.2</span><span style="color: #339933;">;</span>
+  console.<span style="color: #660066;">log</span><span style="color: #009900;">&#40;</span>pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">x</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+  <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">x</span> <span style="color: #339933;">&lt;=</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;</pre>
+
+      <pre class="javascript_render" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> render<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+        ctx.<span style="color: #660066;">clearRect</span><span style="color: #009900;">&#40;</span><span style="color: #CC0000;">0</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">,</span> canvas.<span style="color: #660066;">width</span><span style="color: #339933;">,</span> canvas.<span style="color: #660066;">height</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+      &nbsp;
+        move<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+        <span style="color: #000066; font-weight: bold;">var</span> hit <span style="color: #339933;">=</span> collisionDetection<span style="color: #009900;">&#40;</span>player<span style="color: #339933;">,</span> pipes<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+      &nbsp;
+        <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>hit <span style="color: #339933;">!==</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+          hit.<span style="color: #660066;">color</span> <span style="color: #339933;">=</span> <span style="color: #3366CC;">&quot;red&quot;</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">&#125;</span>
+      &nbsp;
+        drawLevel<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+        drawPipes<span style="color: #009900;">&#40;</span>pipes<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+      &nbsp;
+        requestAnimationFrame<span style="color: #009900;">&#40;</span>render<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">//recursively updates the level</span>
+      <span style="color: #009900;">&#125;</span>
+      &nbsp;</pre>
+
+      <pre class="javascript_collision" style="font-family:monospace;"><span style="color: #000066; font-weight: bold;">function</span> collisionDetection<span style="color: #009900;">&#40;</span>player<span style="color: #339933;">,</span> pipes<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">var</span> pipe of pipes<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>intersects<span style="color: #009900;">&#40;</span>player<span style="color: #339933;">,</span> pipe<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+      console.<span style="color: #660066;">log</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;hit&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+      <span style="color: #000066; font-weight: bold;">return</span> pipe<span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+  <span style="color: #009900;">&#125;</span>
+  <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #003366; font-weight: bold;">null</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #000066; font-weight: bold;">function</span> intersects<span style="color: #009900;">&#40;</span>player<span style="color: #339933;">,</span> pipe<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+  <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #009900;">&#40;</span>
+    player.<span style="color: #660066;">position</span>.<span style="color: #660066;">x</span> <span style="color: #339933;">&lt;</span> pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">x</span> <span style="color: #339933;">+</span> pipe.<span style="color: #660066;">dimensions</span>.<span style="color: #660066;">width</span> <span style="color: #339933;">&amp;&amp;</span>
+    player.<span style="color: #660066;">position</span>.<span style="color: #660066;">x</span> <span style="color: #339933;">+</span> player.<span style="color: #660066;">dimensions</span>.<span style="color: #660066;">width</span> <span style="color: #339933;">&gt;</span> pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">x</span> <span style="color: #339933;">&amp;&amp;</span>
+    player.<span style="color: #660066;">position</span>.<span style="color: #660066;">y</span> <span style="color: #339933;">&lt;</span> pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">y</span> <span style="color: #339933;">+</span> pipe.<span style="color: #660066;">dimensions</span>.<span style="color: #660066;">height</span> <span style="color: #339933;">&amp;&amp;</span>
+    player.<span style="color: #660066;">position</span>.<span style="color: #660066;">y</span> <span style="color: #339933;">+</span> player.<span style="color: #660066;">dimensions</span>.<span style="color: #660066;">height</span> <span style="color: #339933;">&gt;</span> pipe.<span style="color: #660066;">position</span>.<span style="color: #660066;">y</span>
+  <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;</pre>
+  </section>
+  </div>
 
 
-  </body>
+
+</body>
+
 </html>
