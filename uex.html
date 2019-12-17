@@ -1,133 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel='icon' href='./Pictures/logo1.ico' type='image/x-icon'/ >
-    <link href="./Styles/index.css" type="text/css" rel="stylesheet">
-    <title>Maurice Waelen</title>
-  </head>
-  <body>
-    <section class="container">
-      <div class="left-half-no-flex">
-        <article>
-          <!-- The overlay -->
-      <div id="myNav" class="overlay">
 
-        <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<head>
+  <link rel='icon' href='./Pictures/logo1.ico' type='image/x-icon'/>
+  <link href="./Styles/index.css" type="text/css" rel="stylesheet">
+  <title>Maurice Waelen</title>
+</head>
 
-        <!-- Overlay content -->
-        <div class="overlay-content">
-          <a href="index.html">HOME</a>
-          <a href="about_me.html">ABOUT ME</a>
-          <a href="pro.html">PRO</a>
-          <a href="sco.html">SCO</a>
-          <a href="dev.html">DEV</a>
-          <a href="uex.html" style="text-decoration:underline">UEX</a>
+<body>
+  <section class="container">
+    <div class="left-half-no-flex">
+      <article>
+        <!-- The overlay -->
+        <div id="myNav" class="overlay">
+
+          <!-- Button to close the overlay navigation -->
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+          <!-- Overlay content -->
+          <div class="overlay-content">
+            <a href="index.html">HOME</a>
+            <a href="about_me.html">ABOUT ME</a>
+            <a href="pro.html">PRO</a>
+            <a href="sco.html">SCO</a>
+            <a href="dev.html">DEV</a>
+            <a href="uex.html" style="text-decoration:underline">UEX</a>
+
+          </div>
 
         </div>
 
-      </div>
-
-      <!-- Use any element to open/show the overlay navigation menu -->
-      <span class="openbtn" onclick="openNav()">&#9776;</span>
-      <a href="index.html">
+        <!-- Use any element to open/show the overlay navigation menu -->
+        <span class="openbtn" onclick="openNav()">&#9776;</span>
+        <a href="index.html">
           <div class="logo">
             <img src="./Pictures/logo1.png" height=100 width=200 alt="Logo" />
           </div>
         </a>
-        </article>
-      </div>
-      <div class="right-half-bw-bc5">
-        <article>
-          <div class="title-page">
+      </article>
+    </div>
+    <div class="right-half-bw-bc5">
+      <article>
+        <div class="title-page">
           <p>UEX</p>
+        </div>
+        <div class="scroll-down"></div>
+        <section class="card-container">
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <article class="card">
+                  <header class="card__title">
+                    <h3>Brand testing</h3>
+                  </header>
+                  <figure class="card__thumbnail">
+                    <img src="./Pictures/bt.png">
+                  </figure>
+                  <main class="card__description">
+                    Moodboard Aisha.
+                  </main>
+                </article>
+              </div>
+              <div class="flip-card-back">
+                <h1>Brand testing</h1>
+                <a href="https://docs.google.com/document/d/18fXFyHMR1JqoO-RXXJ1Y0Q_vF6enzruzwisjCH4cpkU/edit?usp=sharing" class="button">Show</a>
+              </div>
+            </div>
           </div>
-          <div class="scroll-down"></div>
-          <section class="card-container">
-              <article class="card">
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <article class="card">
                   <header class="card__title">
-                      <h3>Brand testing</h3>
+                    <h3>Storyboard</h3>
                   </header>
                   <figure class="card__thumbnail">
-                      <img src="./Pictures/bt.png">
+                    <img src="./Pictures/sb.png">
                   </figure>
                   <main class="card__description">
-                      Moodboard Aisha.
+                    Customer journey.
                   </main>
-                  <a href="https://docs.google.com/document/d/18fXFyHMR1JqoO-RXXJ1Y0Q_vF6enzruzwisjCH4cpkU/edit?usp=sharing" class="button">Show</a>
+                </article>
+              </div>
+              <div class="flip-card-back">
+                <h1>Story Board</h1>
+                <a href="./Assignments/storyboard.pdf" class="button">Show</a>
+              </div>
+            </div>
+          </div>
 
-              </article>
-              <article class="card">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <article class="card">
                   <header class="card__title">
-                      <h3>Storyboard</h3>
+                    <h3>Research</h3>
                   </header>
                   <figure class="card__thumbnail">
-                      <img src="./Pictures/sb.png">
+                    <img src="./Pictures/res1.jpeg">
                   </figure>
                   <main class="card__description">
-                      Customer journey.
+                    Research
                   </main>
-                  <a href="./Assignments/storyboard.pdf" class="button">Show</a>
-              </article>
-
-              <article class="card">
-                  <header class="card__title">
-                      <h3>Research</h3>
-                  </header>
-                  <figure class="card__thumbnail">
-                      <img src="./Pictures/res1.jpeg">
-                  </figure>
-                  <main class="card__description">
-                      Research
-                  </main>
-                  <a href="#" class="button">Call to Action</a>
-              </article>
-
-              <article class="card">
-                  <header class="card__title">
-                      <h3>Arduino</h3>
-                  </header>
-                  <figure class="card__thumbnail">
-                      <img src="./Pictures/arduino.png">
-                  </figure>
-                  <main class="card__description">
-                      .
-                  </main>
-                  <a href="arduino_page.html" class="button">Show</a>
-              </article>
-
-            <article class="card">
-                <header class="card__title">
-                    <h3>Interview</h3>
-                </header>
-                <figure class="card__thumbnail">
-                    <img src="./Pictures/.png">
-                </figure>
-                <main class="card__description">
-                    Concept.
-                </main>
+                </article>
+              </div>
+              <div class="flip-card-back">
+                <h1>Research</h1>
                 <a href="#" class="button">Call to Action</a>
-            </article>
+              </div>
+            </div>
+          </div>
 
-            <article class="card">
-                <header class="card__title">
-                    <h3>Video prototype</h3>
-                </header>
-                <figure class="card__thumbnail">
-                    <img src="./Pictures/.png">
-                </figure>
-                <main class="card__description">
-                    Assignment.
-                </main>
-                <a href="#" class="button">Call to Action</a>
-            </article>
-          </section>
-        </article>
-
-    </section>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+          <article class="card">
+            <header class="card__title">
+              <h3>Arduino</h3>
+            </header>
+            <figure class="card__thumbnail">
+              <img src="./Pictures/arduino.png">
+            </figure>
+            <main class="card__description">
+              Two wire interface.
+            </main>
+          </article>
+        </div>
+        <div class="flip-card-back">
+          <h1>Arduino</h1>
+          <a href="arduino_page.html" class="button">Show</a>
+        </div>
+      </div>
     </div>
 
+          <article class="card">
+            <header class="card__title">
+              <h3>Interview</h3>
+            </header>
+            <figure class="card__thumbnail">
+              <img src="./Pictures/.png">
+            </figure>
+            <main class="card__description">
+              Concept.
+            </main>
+            <a href="#" class="button">Call to Action</a>
+          </article>
 
-<script src="./Scripts/index.js"></script>
-  </body>
+          <article class="card">
+            <header class="card__title">
+              <h3>Video prototype</h3>
+            </header>
+            <figure class="card__thumbnail">
+              <img src="./Pictures/.png">
+            </figure>
+            <main class="card__description">
+              Assignment.
+            </main>
+            <a href="#" class="button">Call to Action</a>
+          </article>
+        </section>
+      </article>
+
+  </section>
+  </div>
+
+
+  <script src="./Scripts/index.js"></script>
+</body>
+
 </html>
