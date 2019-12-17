@@ -8,6 +8,10 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 
+window.onkeydown = function(e) {
+  return !(e.keyCode == 32 && e.target == document.body);
+};
+
 (function() {
   "use strict";
 
