@@ -16,9 +16,6 @@ function drawPipe(pipe) {
     pipe.dimensions.height
   );
   ctx.closePath();
-  pipe.position.x = pipe.position.x - 1.2;
+  pipe.position.x = pipe.position.x - 3;
   console.log(pipe.position.x);
-
-  if (pipe.position.x <= 0) {
-  }
 }

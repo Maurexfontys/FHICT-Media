@@ -73,6 +73,7 @@ h1 {
   margin: 0;
   margin-left: inherit;
   z-index: 2;
+  font-family: Helvetica;
 }
 
 /* Pattern styles */
@@ -267,21 +268,7 @@ body {
   top: 40%;
   left: 71%;
 }
-/*
-hr {
-  position: relative;
-  top: 19%;
-  left: 20%;
-  display: block;
-  height: 400px;
-  width: 90px;
-  border: 0;
-  border-top: 5px solid #000;
-  margin: 1em 0;
-  padding: 0;
-  z-index: 0;
-}
-*/
+
 .about-me-text {
   position: absolute;
   top: 40%;
@@ -308,7 +295,7 @@ hr {
   position: absolute;
   left: 19%;
   top: 110%;
-  width: 800px;
+  width: 600px;
   color: #000;
   font-family: Helvetica;
   font-size: 19px;
@@ -317,23 +304,26 @@ hr {
 }
 .javascript_collision {
   position: absolute;
-  left: 60%;
-  top: 195%;
+  left: 65%;
+  top: 215%;
   text-align: left;
+  font-size: 10px;
 }
 
 .javascript_render {
   position: absolute;
-  left: 60%;
-  top: 165%;
+  left: 65%;
+  top: 175%;
   text-align: left;
+  font-size: 10px;
 }
 
 .javascript_drawPipe {
   position: absolute;
-  left: 60%;
+  left: 65%;
   top: 117%;
   text-align: left;
+  font-size: 10px;
 }
 
 #abm1 {
