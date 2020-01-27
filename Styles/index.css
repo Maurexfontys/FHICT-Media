@@ -55,7 +55,17 @@ body {
 .myWork {
   position: absolute;
   left: 40%;
-  top: 210%;
+  top: 360%;
+  font-size: 6vw;
+  text-align: center;
+  color: black;
+  text-shadow: 2px 2px 16px #000000;
+}
+
+.sprintX {
+  position: absolute;
+  left: 40%;
+  top: 215%;
   font-size: 6vw;
   text-align: center;
   color: black;
@@ -558,11 +568,26 @@ body {
 .slideshow-container {
   max-width: 750px;
   position: absolute;
+  text-align: center;
   margin-bottom: 69px;
-  left: 25%;
-  top: 250%;
+  left: 26%;
+  top: 400%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
+.slideshow-container-sprintX {
+  max-width: 750px;
+  position: absolute;
+  margin-bottom: 69px;
+  text-align: center;
+  left: 26%;
+  top: 245%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 /* Hide the images by default */
 .mySlides {
   display: none;
