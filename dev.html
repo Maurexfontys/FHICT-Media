@@ -58,7 +58,8 @@
         <br>
 
         <p>
-          Ik heb gekozen om voor development in dit semester een game te maken in Javascript.
+          Ik heb gekozen om voor development in dit semester een soort mini game-engine te maken in Javascript.
+
           <br>
           <br>
 
@@ -71,30 +72,68 @@
           <br>
           Toen kwam ik door advies van Erik uit op het maken van een iets grotere opdracht.<br>
 
-          Dit sprak mij wel aan en ben ik begonnen met de basis van mijn game op te zetten.
+          Dit sprak mij wel aan en vervolgens ben ik begonnen met de basis van mijn game-engine op te zetten.
           <br>
           <br>
-          <br>
-          <h2>Requirements:</h2>
-          <br>
+          <p>Normaal gebruik je Unity om gebruik te maken van alle functies die al gemaakt zijn o.a. collision detection, maar het leek mij leuker om dit zelf te maken in Javascript.
+            <br>
+            <br>
+            <br>
+            <h2>Requirements:</h2>
+            <br>
 
-          - De gebruiker moet soepel omhoog kunnen springen door de spatiebalk in te drukken.<br>
-          <br>
-          - Een of meerdere obstakels over het canvas laten bewegen.<br>
-          <br>
-          - Collision Detection. (Zodra de gebruiker een obstakel raakt is hij game-over).<br>
-          <br>
-          <br>
-          <br>
-          Dit zijn de basis requirements voor mijn game.<br><br>
-          Dmv. Github heb ik makkelijk mijn gemaakte features kunnen testen en deze vervolgens kunnen implementeren op mijn DEV Portfolio pagina.<br><br>
+            - De gebruiker moet soepel omhoog kunnen springen door de spatiebalk in te drukken.<br>
+            <br>
+            - Een of meerdere obstakels over het canvas laten bewegen.<br>
+            <br>
+            - Collision Detection. (Zodra de gebruiker een obstakel raakt is hij game-over).<br>
+            <br>
+            - Ik kan met een aparte render functie alle functies die moeten worden uitgevoerd aanroepen.
+            <br>
+            <br>
+            Dit zijn de basis requirements voor mijn game.<br><br>
+            <br>
+            Dmv. Github heb ik makkelijk mijn gemaakte features kunnen testen en deze vervolgens kunnen implementeren op mijn DEV Portfolio pagina.<br><br>
 
-          Door deze game op te delen in kleinere problemen en gebruik te maken van versiebeheer kon ik heel makkelijk overzicht houden in mijn code.<br><br>
+            Door deze game op te delen in kleinere problemen en gebruik te maken van versiebeheer kon ik heel makkelijk overzicht houden in mijn code.<br><br>
 
-          Zoals het nu staat werken alle genoemde requirements in mijn game. <br> Nu lijkt het mij leuk om hier nog een heel level van te maken waardoor er meer objecten over het canvas bewegen en het ook echt een game is ipv. een POC waar ik mijn
-          leerdoelen mee wil aantonen.
-          <br> <br> <br>
-        </p>
+            Zoals het nu staat werken alle genoemde requirements in mijn game-engine. <br> Nu lijkt het mij leuk om hier nog een heel level van te maken waardoor er meer objecten over het canvas bewegen en het ook echt een game is ipv. een POC waar ik mijn
+            leerdoelen mee wil aantonen.
+            <br>
+            <br>
+
+
+            <p>
+              <br><br>
+              <h2>Hoe heb ik dit aangepakt?</h2>
+              <br>
+              <p>Ik ben begonnen met het kijken op verschillende sites als w3schools en stack overflow om te kijken hoe ik een object in javascript over een canvas kan laten bewegen. <br>Vervolgens heb ik mijn eigen obstakel gemaakt en deze over het
+                canvas laten bewegen.
+
+                Toen dit lukte moest ik gaan kijken naar hoe ik dit blokje van kleur moet laten veranderen als hij in aanraking komt met de speler (de bal).</p><br>
+
+              <p>Hier liep ik tegen het probleem op dat de bal rond is en het object dat beweegt vierkant en het redelijk complex wordt om dit goed te doen.</p><br>
+
+              <p>Na veel zoeken en testen heb ik gebruik gemaakt van een bounding box. Dit is een vierkant die ik als het ware om de bal heen teken. Dit houdt in dat de bal eigenlijk een vierkant is. Wat het een stuk gemakkelijker maakt om colision
+                detection toe te passen. Dit is immers gewoon wiskunde waar je kijkt of 2 lijnen elkaar kruisen.</p><br>
+
+              <p>Omdat het vierkant om de bal heen zit zul je natuurlijk wel hebben dat hij vals alarm geeft als de bal het obstakel net op de hoek van een bouding box raakt.
+
+                Toch is dit gedeelte nihil en merk je dit eigenlijk niet. Dat is de reden waarom ze dit ook in professioneel game development gebruiken.
+                <br>
+                <br>
+                <br>
+
+                <h2>Waarom maakt mij dit een betere media designer?</h2>
+                <br>
+                <br>
+                <p>Ik heb mijn draai in javascript gevonden en geleerd hoe ik collision detection toe moet passen. Ook weet ik nu veel beter hoe ik moet beginnen aan een grotere opdracht als deze en breng ik nu veel makkelijker structuur in mijn
+                  code om alles overzichtelijk te houden.<br><br> Dit is ook de reden waarom ik een renderfunctie heb gemaakt die losstaat van mijn functies en deze vervolgens stuk voor stuk aanroept om makkelijk te kunnen zien waar ik welke functie
+                  aanroep.</p>
+
+                <p>Na het maken van deze opdracht weet ik zeker dat ik bij aankomende (grotere) programmeeropdrachten profijt van deze opgedane kennis en ik steeds beter weet hoe ik complexe problemen moet oplossen.</p>
+                <br><br>
+              </p>
       </div>
 
       <pre class="javascript_drawPipe" style="font-family:monospace;">document.<span style="color: #660066;">addEventListener</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;keydown&quot;</span><span style="color: #339933;">,</span> drawPipe<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
