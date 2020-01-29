@@ -5,56 +5,50 @@ document.addEventListener("keyup", function(e) {
   keys[e.keyCode] = false;
 });
 
-const pipeCount = 15;
-
 let pipes = [];
+let player = {};
 
-let player = {
-  position: {
-    x: 300,
-    y: 500
-  },
-  velocity: {
-    x: 0,
-    y: 0
-  },
-  dimensions: {
-    width: 30,
-    height: 30
-  }
-};
+const pipeCount = 15,
+  maxVelY = 6,
+  inertia = 0.92,
+  gravity = 0.3,
+  BLOCK_HEIGHT = 45,
+  BLOCK_WIDTH = 45;
 
 var canvas,
-  menuActive = true,
-  maxVelY = 6,
-  speed = 3,
-  jumpSpeed = 2,
-  inertia = 0.92,
-  keys = [],
   jumping = false,
   onGround = true,
-  gravity = 0.3,
-  platformX = [100, 520],
-  platformY = [200, 110],
+  keys = [],
   groundX = [],
   groundY = [],
-  platformNumber,
-  currentOffsetX = 0,
-  min_offset = 100,
-  max_offset = 900,
-  blockstart = 0,
   groundBlocks = 20;
-const BLOCK_HEIGHT = 45,
-  BLOCK_WIDTH = 45;
+
 window.onload = function() {
-  canvas = document.getElementById("gameCanvas");
-  ctx = canvas.getContext("2d");
   init();
   render();
   //starts game if enter is pressed
 };
 
 function init() {
+  canvas = document.getElementById("gameCanvas");
+  ctx = canvas.getContext("2d");
+
+  player = {
+    position: {
+      x: 300,
+      y: 500
+    },
+    velocity: {
+      x: 0,
+      y: 0
+    },
+    dimensions: {
+      width: 30,
+      height: 30
+    }
+  };
+
+  pipes = [];
   for (var i = 0; i < pipeCount; i++) {
     pipes.push({
       position: {
@@ -78,6 +72,7 @@ function render() {
 
   if (hit !== null) {
     hit.color = "red";
+    init();
   }
 
   drawLevel();
