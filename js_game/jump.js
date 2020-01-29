@@ -77,8 +77,23 @@ function render() {
 
   drawLevel();
   drawPipes(pipes);
+  drawScore();
 
   requestAnimationFrame(render); //recursively updates the level
+}
+
+function drawScore() {
+  let score = 0;
+
+  for (var pipe of pipes) {
+    if (pipe.position.x + player.position.x < player.position.x) {
+      score += 10;
+    }
+  }
+
+  ctx.fillStyle = "white";
+  ctx.font = "30px Arial";
+  ctx.fillText("Score: " + score, 100, 100);
 }
 
 //draws the level and character
