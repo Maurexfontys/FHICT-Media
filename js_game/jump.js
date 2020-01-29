@@ -21,7 +21,8 @@ var canvas,
   keys = [],
   groundX = [],
   groundY = [],
-  groundBlocks = 20;
+  groundBlocks = 20,
+  diedCount = 0;
 
 window.onload = function() {
   init();
@@ -72,7 +73,9 @@ function render() {
 
   if (hit !== null) {
     hit.color = "red";
-    init();
+    diedCount++;
+    if (diedCount < 3) init();
+    else return gameOver();
   }
 
   drawLevel();
@@ -80,6 +83,17 @@ function render() {
   drawScore();
 
   requestAnimationFrame(render); //recursively updates the level
+}
+
+function gameOver() {
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  drawLevel();
+  drawPipes(pipes);
+  drawScore();
+  ctx.fillStyle = "white";
+  ctx.font = "30px Arial";
+  ctx.fillText("Game Over!", canvas.width / 2 - 100, canvas.height / 2);
 }
 
 function drawScore() {
