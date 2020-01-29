@@ -315,7 +315,7 @@ body {
 .javascript_collision {
   position: absolute;
   left: 65%;
-  top: 215%;
+  top: 245%;
   text-align: left;
   font-size: 10px;
 }
@@ -323,7 +323,7 @@ body {
 .javascript_render {
   position: absolute;
   left: 65%;
-  top: 175%;
+  top: 205%;
   text-align: left;
   font-size: 10px;
 }
@@ -331,9 +331,40 @@ body {
 .javascript_drawPipe {
   position: absolute;
   left: 65%;
-  top: 117%;
+  top: 137%;
   text-align: left;
   font-size: 10px;
+}
+
+.buttonsDev1 {
+  background-color: #000;
+  position: absolute;
+  top: 110%;
+  left: 60%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 5px;
+  cursor: pointer;
+}
+.buttonsDev2 {
+  background-color: #000;
+  position: absolute;
+  top: 110%;
+  left: 80%;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 5px;
+  cursor: pointer;
 }
 
 #abm1 {
