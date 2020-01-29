@@ -9,11 +9,11 @@ let pipes = [
   {
     position: {
       x: 900,
-      y: 250
+      y: 320
     },
     dimensions: {
       width: 10,
-      height: 300
+      height: 220
     },
     color: "white"
   }
@@ -81,10 +81,8 @@ function render() {
 
 //draws the level and character
 function drawLevel() {
-  var groundBlock = "mario1";
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  bigBlock(blockstart, 2, "green", groundBlocks, 1); //draw the ground
   ctx.fillStyle = "white";
   ctx.beginPath();
   var circle = ctx.arc(
