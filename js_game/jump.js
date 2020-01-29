@@ -5,19 +5,9 @@ document.addEventListener("keyup", function(e) {
   keys[e.keyCode] = false;
 });
 
-let pipes = [
-  {
-    position: {
-      x: 900,
-      y: 320
-    },
-    dimensions: {
-      width: 10,
-      height: 220
-    },
-    color: "white"
-  }
-];
+const pipeCount = 15;
+
+let pipes = [];
 
 let player = {
   position: {
@@ -59,9 +49,26 @@ const BLOCK_HEIGHT = 45,
 window.onload = function() {
   canvas = document.getElementById("gameCanvas");
   ctx = canvas.getContext("2d");
+  init();
   render();
   //starts game if enter is pressed
 };
+
+function init() {
+  for (var i = 0; i < pipeCount; i++) {
+    pipes.push({
+      position: {
+        x: 900 + 300 * i,
+        y: 320 - 200 * Math.random()
+      },
+      dimensions: {
+        width: 10,
+        height: 180
+      },
+      color: "white"
+    });
+  }
+}
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
