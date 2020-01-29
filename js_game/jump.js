@@ -71,8 +71,7 @@ function render() {
   move();
   var hit = collisionDetection(player, pipes);
 
-  if (hit !== null) {
-    hit.color = "red";
+  if (hit !== null || player.position.y - 30 > canvas.height) {
     diedCount++;
     if (diedCount < 3) init();
     else return gameOver();
