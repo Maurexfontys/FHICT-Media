@@ -1,7 +1,7 @@
 function collisionDetection(player, pipes) {
   for (var pipe of pipes) {
     if (intersects(player, pipe)) {
-      console.log("hit");
+      //console.log("hit");
 
       return pipe;
     }

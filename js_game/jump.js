@@ -7,8 +7,9 @@ document.addEventListener("keyup", function(e) {
 
 let pipes = [];
 let player = {};
+let score = 0;
 
-const pipeCount = 15,
+const pipeCount = 25,
   maxVelY = 6,
   inertia = 0.92,
   gravity = 0.3,
@@ -54,11 +55,12 @@ function init() {
     pipes.push({
       position: {
         x: 900 + 300 * i,
-        y: 320 - 200 * Math.random()
+        y: 320 - 200 * Math.random() + 30
       },
+
       dimensions: {
-        width: 10,
-        height: 180
+        width: 15,
+        height: 270
       },
       color: "white"
     });
@@ -67,14 +69,21 @@ function init() {
 
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
   move();
   var hit = collisionDetection(player, pipes);
 
-  if (hit !== null || player.position.y - 30 > canvas.height) {
+  if (
+    hit !== null ||
+    player.position.y - 30 > canvas.height ||
+    player.position.y + 620 < canvas.height
+  ) {
     diedCount++;
     if (diedCount < 3) init();
     else return gameOver();
+  }
+
+  if (score == pipeCount * 10) {
+    return gamePassed();
   }
 
   drawLevel();
@@ -82,6 +91,17 @@ function render() {
   drawScore();
 
   requestAnimationFrame(render); //recursively updates the level
+}
+
+function gamePassed() {
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  drawLevel();
+  drawPipes(pipes);
+  drawScore();
+  ctx.fillStyle = "white";
+  ctx.font = "30px Arial";
+  ctx.fillText("You Won!", canvas.width / 2 - 100, canvas.height / 2);
 }
 
 function gameOver() {
@@ -96,8 +116,7 @@ function gameOver() {
 }
 
 function drawScore() {
-  let score = 0;
-
+  score = 0;
   for (var pipe of pipes) {
     if (pipe.position.x + player.position.x < player.position.x) {
       score += 10;

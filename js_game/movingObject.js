@@ -17,5 +17,5 @@ function drawPipe(pipe) {
   );
   ctx.closePath();
   pipe.position.x = pipe.position.x - 3;
-  console.log(pipe.position.x);
+  //console.log(pipe.position.x);
 }
